@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Accueil</title>
+
+	<!-- Stylesheets
+	============================================= -->
+	<link rel="stylesheet" href="demos/shop/shop.css" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Raleway:300,400,500,600,700|Crete+Round:400i" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
+	<link rel="stylesheet" href="css/components/ion.rangeslider.css" type="text/css" />
+
+	<!-- SLIDER REVOLUTION 5.x CSS SETTINGS -->
+	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/settings.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/layers.css">
+	<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/navigation.css">
+
+		
+
+	<!-- Document Title
+	============================================= -->
+
+	<style>
+
+		.revo-slider-emphasis-text {
+			font-size: 58px;
+			font-weight: 700;
+			letter-spacing: 1px;
+			font-family: 'Raleway', sans-serif;
+			padding: 15px 20px;
+			border-top: 2px solid #FFF;
+			border-bottom: 2px solid #FFF;
+		}
+
+		.revo-slider-desc-text {
+			font-size: 20px;
+			font-family: 'Lato', sans-serif;
+			width: 650px;
+			text-align: center;
+			line-height: 1.5;
+		}
+
+		.revo-slider-caps-text {
+			font-size: 16px;
+			font-weight: 400;
+			letter-spacing: 3px;
+			font-family: 'Raleway', sans-serif;
+		}
+
+		.tp-video-play-button { display: none !important; }
+
+		.tp-caption { white-space: nowrap; }
+		.header-login-trigger {
+			float: right;
+			width: 20px;
+			height: 20px;
+			line-height: 20px;
+			font-size: 20px;
+			text-align: center;
+			margin: 40px 0 40px 10px;
+			color: #222;
+			-webkit-transition: margin .4s ease;
+			-o-transition: margin .4s ease;
+			transition: margin .4s ease;
+		}
+
+		.header-login-trigger:hover { color: #666; }
+
+		#header.sticky-header .header-login-trigger { margin: 20px 0 20px 10px; }
+
+		span.twitter-typeahead {
+		display: block !important;
+		position: absolute;
+		height: 100%;
+	}
+
+	.tt-menu {
+		width: 100%;
+		margin: 0;
+		padding: 8px 0;
+		background-color: #FFF;
+		border: 1px solid rgba(0, 0, 0, 0.2);
+		-webkit-border-radius: 4px;
+		 -moz-border-radius: 4px;
+			  border-radius: 4px;
+		-webkit-box-shadow: 0 1px 10px rgba(0,0,0,.1);
+		 -moz-box-shadow: 0 1px 10px rgba(0,0,0,.1);
+			  box-shadow: 0 1px 10px rgba(0,0,0,.1);
+
+	}
+
+	.tt-suggestion {
+		padding: 3px 20px;
+		font-size: 15px;
+		line-height: 24px;
+	}
+
+	.tt-suggestion:hover {
+		cursor: pointer;
+		color: #FFF;
+		background-color: #0097cf;
+	}
+
+	.tt-suggestion.tt-cursor {
+		color: #fff;
+		background-color: #0097cf;
+
+	}
+
+	#top-search form input.form-control.tt-hint { color: #999 !important; }
+
+	</style>
+
+</head>
+
+<body class="stretched">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="full-header">
+
+			<div id="header-wrap">
+
+				<div class="container clearfix">
+
+					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+					<!-- Logo
+					============================================= -->
+					<div id="logo">
+						<a href="{{path('index')}}" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="images/NEW.jpg" alt=" Logo"></a>
+						<a href="{{path('index')}}" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="" alt=" Logo"></a>
+					</div><!-- #logo end -->
+
+					<!-- Primary Navigation
+					============================================= -->
+					<nav id="primary-menu">
+
+						<ul>
+							<li class="current"><a href="{{path('index')}}"><div>Accueil</div></a>
+
+							</li>
+							<!-- Mega Menu
+							============================================= -->
+							{%for c in cat%}
+								{%if(c.designation =="Homme")%}
+							<li class="mega-menu"><a href="{{path('produits',{idC:c.idCategorie})}}"><div>Hommes</div></a>
+								{%endif%}
+								{%endfor%}
+
+							</li><!-- .mega-menu end -->
+							{%for c in cat%}
+								{%if(c.designation =="Femme")%}
+								<li class="mega-menu"><a href="{{path('produits',{idC:c.idCategorie})}}"><div>Femme</div></a>
+									{%endif%}
+									{%endfor%}
+							</li><!-- .mega-menu end -->
+							<li class="mega-menu"><a href="#"><div>Autres</div></a>
+								<div class="mega-menu-content style-2 clearfix" style="background-image: url('images/shop/shop-menu.jpg'); background-repeat: no-repeat; background-position: right bottom;">
+									<ul class="mega-menu-column col-xl-2 col-lg-3">
+										<li>
+											<div class="widget clearfix">
+
+												<div class="product iproduct clearfix">
+													<div class="product-image">
+														<a href="#"><img src="images/shop/shoes/2-small.jpg" alt="Gray Shoes"></a>
+														<a href="#"><img src="images/shop/shoes/2-2-small.jpg" alt="Gray Shoes"></a>
+														<div class="sale-flash">50% Off*</div>
+														<div class="product-overlay">
+															<a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
+															<a href="include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Quick View</span></a>
+														</div>
+													</div>
+													<div class="product-desc nobottompadding center">
+														<div class="product-title"><h3><a href="#">Gray Shoes</a></h3></div>
+														<div class="product-price"><del>$24.99</del> <ins>$12.49</ins></div>
+													</div>
+												</div>
+
+											</div>
+										</li>
+									</ul>
+									<ul class="mega-menu-column col-lg-3">
+										<li>
+											<div class="widget clearfix">
+
+												<h4 class="highlight-me">Last Viewed Items</h4>
+												<div class="widget-last-view">
+													<div class="spost clearfix">
+														<div class="entry-image">
+															<a href="#"><img src="images/shop/small/3.jpg" alt="Image"></a>
+														</div>
+														<div class="entry-c">
+															<div class="entry-title">
+																<h4><a href="#">Round-Neck Tshirt</a></h4>
+															</div>
+															<ul class="entry-meta">
+																<li class="color">$15</li>
+																<li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i></li>
+															</ul>
+														</div>
+													</div>
+
+													<div class="spost clearfix">
+														<div class="entry-image">
+															<a href="#"><img src="images/shop/small/10.jpg" alt="Image"></a>
+														</div>
+														<div class="entry-c">
+															<div class="entry-title">
+																<h4><a href="#">Green Trousers</a></h4>
+															</div>
+															<ul class="entry-meta">
+																<li class="color">$19</li>
+																<li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-empty"></i> <i class="icon-star-empty"></i> <i class="icon-star-empty"></i></li>
+															</ul>
+														</div>
+													</div>
+
+													<div class="spost clearfix">
+														<div class="entry-image">
+															<a href="#"><img src="images/shop/small/7.jpg" alt="Image"></a>
+														</div>
+														<div class="entry-c">
+															<div class="entry-title">
+																<h4><a href="#">Light Blue Denim Dress</a></h4>
+															</div>
+															<ul class="entry-meta">
+																<li class="color">$19.99</li>
+																<li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-half-full"></i> <i class="icon-star-empty"></i></li>
+															</ul>
+														</div>
+													</div>
+												</div>
+
+											</div>
+										</li>
+									</ul>
+									<ul class="mega-menu-column col-lg-2">
+										<li class="mega-menu-title"><a href="#"><div>Categories</div></a>
+											<ul>
+												{%for c in cat%}
+												{%if( (c.designation !="Homme")and (c.designation!="Femme"))%}
+												
+												<li><a href="{{path('produits',{idC:c.idcategorie})}}"><div><i class=""></i>{{c.designation}}</div></a></li>
+												{% endif%}
+												{%endfor%}
+												
+											</ul>
+										</li>
+									</ul>
+									
+								</div>
+							</li>
+							<li class="mega-menu"><a href="{{path('contact')}}"><div>Contact</div></a>
+								<div class="mega-menu-content style-2 clearfix">
+									<ul class="mega-menu-column col-lg-3">
+										<li>
+											<div class="widget d-none d-lg-block clearfix">
+
+												<h4>Notre emplacement</h4>
+
+												<section  id="google-map" class="gmap" style=" width:300px;height:250px;border:0" allowfullscreen></section>
+
+											</div>
+										</li>
+									</ul>
+									<ul class="mega-menu-column col-lg-6">
+										<li>
+											<div class="widget clearfix">
+
+												<h4>Envoyez-nous un email rapide</h4>
+
+												<div class="form-widget" data-loader="button">
+													<div class="form-result"></div>
+
+													<form class="nobottommargin row" name="template-contactform" action="include/form.php" method="post">
+
+														<div class="col-md-6 mb-0 mb-md-4">
+															<div class="col_full">
+																<input type="text" name="template-contactform-name" value="" class="form-control required" placeholder="Nom" />
+															</div>
+															<div class="col_full">
+																<input type="email" name="template-contactform-email" value="" class="required email form-control" placeholder="Email" />
+															</div>
+															<div class="col_full nobottommargin">
+																<input type="text" name="template-contactform-phone" value="" class="form-control" placeholder="Téléphone" />
+															</div>
+														</div>
+
+														<div class="col-md-6 mb-4">
+															<div class="col_full">
+																<input type="text" name="subject" value="" class="required form-control" placeholder="Objet" />
+															</div>
+															<textarea class="required form-control" name="template-contactform-message" rows="3" cols="30" placeholder="Entrer Ton Message"></textarea>
+														</div>
+
+														<div class="clear"></div>
+
+														<div class="col-12 hidden">
+															<input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="form-control" />
+														</div>
+
+														<div class="col-12">
+															<button class="button button-3d button-small nomargin" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Envoyer</button>
+														</div>
+
+														<input type="hidden" name="prefix" value="template-contactform-">
+
+													</form>
+												</div>
+
+											</div>
+										</li>
+									</ul>
+									<ul class="mega-menu-column col-lg-3">
+										<li>
+											<div class="widget clearfix">
+
+
+												<address>
+													<strong>Address:</strong><br>
+											   	Boulevard X<br>
+													Oujda<br>
+													Maroc<br>
+												</address>
+												<abbr title="Phone Number"><strong>Téléphone:</strong></abbr> +2126-xx-xx-xx-xx<br>
+												<abbr title="Email Address"><strong>Email:</strong></abbr> email@gmail.com
+
+												<div class="bottommargin-sm"></div>
+
+
+
+											</div>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="{{path('faq')}}"><div>FAQ</div></a></li>
+							<li><a href="{{path('about')}}"><div>A propos de nous</div></a></li>
+
+						</ul>
+
+
+						<!-- Top Cart
+						============================================= -->
+						<div id="top-cart">
+							<a href="#" id="top-cart-trigger"><i class="icon-shopping-cart"></i><span>5</span></a>
+							<div class="top-cart-content">
+								<div class="top-cart-title">
+									<h4>Panier</h4>
+								</div>
+								<div class="top-cart-items">
+									<div class="top-cart-item clearfix">
+										<div class="top-cart-item-image">
+											<a href="#"><img src="images/shop/small/1.jpg" alt="Blue Round-Neck Tshirt" /></a>
+										</div>
+										<div class="top-cart-item-desc">
+											<a href="#">Tshirt Bleu</a>
+											<span class="top-cart-item-price">190.99 DH</span>
+											<span class="top-cart-item-quantity">x 2</span>
+										</div>
+									</div>
+									<div class="top-cart-item clearfix">
+										<div class="top-cart-item-image">
+											<a href="#"><img src="images/shop/small/6.jpg" alt="Light Blue Denim Dress" /></a>
+										</div>
+										<div class="top-cart-item-desc">
+											<a href="#">Robe</a>
+											<span class="top-cart-item-price">240.99 DH</span>
+											<span class="top-cart-item-quantity">x 3</span>
+										</div>
+									</div>
+								</div>
+								<div class="top-cart-action clearfix">
+									<span class="fleft top-checkout-price">1104.95 DH</span>
+									<button class="button button-3d button-small nomargin fright" onclick="location.href='{{path('panier')}}'">Voir Panier</button>
+								</div>
+							</div>
+						</div><!-- #top-cart end -->
+
+						<!-- Top Search
+						============================================= -->
+						<div id="top-search">
+							<a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
+							<form action="{{path('search')}}" method="post" >
+								<input type="text" name="q"  id="sea" class="typeahead form-control" value="" placeholder="Chercher par nom ou type ...">
+							</form>
+						</div><!-- #top-search end -->
+						{%if app.user%}
+						<a href="#"  class="header-login-trigger " data-toggle="dropdown" ><i class="icon-line2-user"></i></a>
+
+							<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+								<a class="dropdown-item tleft" href="{{path('profile',{idC:app.user.idclient})}}">Mon Compte</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item tleft" href="{{path('security_logout')}}">Déconnexion <i class="icon-signout"></i></a>
+							</ul>	
+						{%else%}
+						<a href="{{path('login')}}" class="header-login-trigger"><i class="icon-line2-login"></i></a>
+						{%endif%}
+					</nav><!-- #primary-menu end -->
+
+				</div>
+
+			</div>
+		</header><!-- #header end -->
+
+		<section id="slider" class="slider-element slider-parallax revslider-wrap ohidden clearfix">
+
+			<!--
+			#################################
+				- THEMEPUNCH BANNER -
+			#################################
+			-->
+			<div id="rev_slider_ishop_wrapper" class="rev_slider_wrapper fullwidth-container" data-alias="default-slider" style="padding:0px;">
+					<!-- START REVOLUTION SLIDER 5.1.4 fullwidth mode -->
+				<div id="rev_slider_ishop" class="rev_slider fullwidthbanner" style="display:none;" data-version="5.1.4">
+					<ul>    <!-- SLIDE  -->
+						<li data-transition="fade" data-slotamount="1" data-masterspeed="1500" data-delay="5000" data-saveperformance="off" data-title="Dernieres Collections" style="background-color: #F6F6F6;">
+							<!-- LAYERS -->
+
+							<!-- LAYER NR. 2 -->
+							<div class="tp-caption ltl tp-resizeme revo-slider-caps-text uppercase"
+							data-x="100"
+							data-y="50"
+							data-transform_in="x:-200;y:0;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;s:700;e:Power4.easeOutQuad;"
+							data-speed="400"
+							data-start="1000"
+							data-easing="easeOutQuad"
+							data-splitin="none"
+							data-splitout="none"
+							data-elementdelay="0.01"
+							data-endelementdelay="0.1"
+							data-endspeed="1000"
+							data-endeasing="Power4.easeIn" style=""><img src="images/slider/rev/shop/girl1.jpg" alt="Girl"></div>
+
+
+
+							<div class="tp-caption ltl tp-resizeme revo-slider-emphasis-text nopadding noborder"
+							data-x="480"
+							data-y="105"
+							data-transform_in="x:0;y:150;z:0;rotationZ:0;scaleX:1.3;scaleY:1;skewX:0;skewY:0;opacity:0;s:700;e:Power4.easeOutQuad;"
+							data-speed="700"
+							data-start="1200"
+							data-easing="easeOutQuad"
+							data-splitin="none"
+							data-splitout="none"
+							data-elementdelay="0.01"
+							data-endelementdelay="0.1"
+							data-endspeed="1000"
+							data-endeasing="Power4.easeIn" style=" color: #333; max-width: 430px; line-height: 1.15;">Collections du Printemps <br>Pour Elle</div>
+
+							<div class="tp-caption ltl tp-resizeme revo-slider-desc-text tleft"
+							data-x="570"
+							data-y="275"
+							data-transform_in="x:0;y:150;z:0;rotationZ:0;scaleX:1.3;scaleY:1;skewX:0;skewY:0;opacity:0;s:700;e:Power4.easeOutQuad;"
+							data-speed="700"
+							data-start="1400"
+							data-easing="easeOutQuad"
+							data-splitin="none"
+							data-splitout="none"
+							data-elementdelay="0.01"
+							data-endelementdelay="0.1"
+							data-endspeed="1000"
+							data-endeasing="Power4.easeIn" style=" color: #333; max-width: 550px; white-space: normal;">L'élégance à petit prix </div>
+
+							<div class="tp-caption ltl tp-resizeme"
+							data-x="570"
+							data-y="375"
+							data-transform_in="x:0;y:150;z:0;rotationZ:0;scaleX:1.3;scaleY:1;skewX:0;skewY:0;opacity:0;s:700;e:Power4.easeOutQuad;"
+							data-speed="700"
+							data-start="1550"
+							data-easing="easeOutQuad"
+							data-splitin="none"
+							data-splitout="none"
+							data-elementdelay="0.01"
+							data-endelementdelay="0.1"
+							data-endspeed="1000"
+							data-endeasing="Power4.easeIn" style=""><a href="#" class="button button-border button-large button-rounded tright nomargin"><span>Commencez vos achats</span> <i class="icon-angle-right"></i></a></div>
+
+							<div class="tp-caption utb tp-resizeme revo-slider-caps-text uppercase"
+							data-x="370"
+							data-y="0"
+							data-transform_in="x:0;y:-236;z:0;rotationZ:0;skewX:0;skewY:0;opacity:0;s:700;e:Power4.easeOutQuad;"
+							data-speed="600"
+							data-start="2100"
+							data-easing="easeOutQuad"
+							data-splitin="none"
+							data-splitout="none"
+							data-elementdelay="0.01"
+							data-endelementdelay="0.1"
+							data-endspeed="1000"
+							data-endeasing="Power4.easeIn" style=""><img src="images/slider/rev/shop/tag.png" alt="Bag"></div>
+						</li>
+						<!-- SLIDE  -->
+
+							<!-- LAYERS -->
+
+							<!-- LAYER NR. 2 -->
+
+
+					</ul>
+				</div>
+			</div><!-- END REVOLUTION SLIDER -->
+
+		</section>
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+
+			<div class="content-wrap">
+
+								<div class="container clearfix">
+
+									<div class="fancy-title title-dotted-border title-center mb-4">
+										<h3>Découvrez Nos Catégories Populaires</h3>
+									</div>
+									<div class="row shop-categories clearfix">
+										<div class="col-lg-7">
+											<a href="#" style="background: url('demos/shop/images/categories/2-1.jpg') no-repeat right center; background-size: cover;">
+												<div class="vertical-middle dark center">
+													<div class="heading-block nomargin noborder">
+														<h3 class="nott t600 ls0">Pour Lui</h3>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="col-lg-5">
+											<a href="#" style="background: url('demos/shop/images/categories/1.jpg') no-repeat center right; background-size: cover;">
+												<div class="vertical-middle dark center">
+													<div class="heading-block nomargin noborder">
+														<h3 class="nott t600 ls0">Pour Elle</h3>
+													</div>
+												</div>
+											</a>
+										</div>
+
+										<div class="col-lg-4">
+											<a href="#" style="background: url('demos/ecommerce/images/catagories/2.jpg') no-repeat center center; background-size: cover;">
+												<div class="vertical-middle dark center">
+													<div class="heading-block nomargin noborder">
+														<h3 class="nott t600 ls0">Accessoires</h3>
+														<small class="button bg-white text-dark button-light button-mini">Achetez maintenant</small>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="col-lg-4">
+											<a href="#" style="background: url('demos/shop/images/categories/3.jpg') no-repeat center center; background-size: cover;">
+												<div class="vertical-middle dark center">
+													<div class="heading-block nomargin noborder">
+														<h3 class="nott t600 ls0">Chaussures</h3>
+														<small class="button bg-white text-dark button-light button-mini">Achetez maintenant</small>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="col-lg-4">
+											<a href="#" style="background: url('demos/shop/images/categories/5.jpg') no-repeat center center; background-size: cover;">
+												<div class="vertical-middle dark center">
+													<div class="heading-block nomargin noborder">
+														<h3 class="nott t600 ls0">Vêtements de sport</h3>
+														<small class="button bg-white text-dark button-light button-mini">Achetez maintenant</small>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+
+									<div class="clear bottommargin-sm"></div>
+									<div class="fancy-title title-center title-dotted-border topmargin">
+										<h3>Meilleures Ventes</h3>
+									</div>
+									<div id="oc-products" class="owl-carousel products-carousel carousel-widget" data-margin="20" data-loop="true" data-autoplay="5000" data-nav="true" data-pagi="false" data-items-xs="1" data-items-sm="2" data-items-md="3" data-items-lg="4" data-items-xl="5">
+
+										<div class="oc-item">
+											<div class="product iproduct clearfix">
+												<div class="product-image">
+													<a href="#"><img src="demos/shop/images/items/featured/5-1.jpg" alt="T-shirts"></a>
+													<div class="product-overlay">
+														<a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter</span></a>
+													</div>
+												</div>
+												<div class="product-desc">
+													<div class="product-title mb-1"><h3><a href="#">Nom Produit</a></h3></div>
+													<div class="product-price font-primary"><ins>prix DH</ins></div>
+													<div class="product-rating">
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star-empty"></i>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="oc-item">
+											<div class="product iproduct clearfix">
+												<div class="product-image">
+													<a href="#"><img src="demos/shop/images/items/featured/1.jpg" alt="T-shirts"></a>
+													<div class="product-overlay">
+														<a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter</span></a>
+													</div>
+												</div>
+												<div class="product-desc">
+													<div class="product-title mb-1"><h3><a href="#">Nom Produit</a></h3></div>
+													<div class="product-price font-primary"><ins>Prix DH</ins></div>
+													<div class="product-rating">
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star-empty"></i>
+														<i class="icon-star-empty"></i>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="oc-item">
+											<div class="product iproduct clearfix">
+												<div class="product-image">
+													<a href="#"><img src="demos/shop/images/items/featured/5.jpg" alt="T-shirts"></a>
+													<div class="product-overlay">
+														<a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter</span></a>
+													</div>
+												</div>
+												<div class="product-desc">
+													<div class="product-title mb-1"><h3><a href="#">Nom Produit</a></h3></div>
+													<div class="product-price font-primary"><ins>Prix DH</ins></div>
+													<div class="product-rating">
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star-empty"></i>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="oc-item">
+											<div class="product iproduct clearfix">
+												<div class="product-image">
+													<a href="#"><img src="demos/shop/images/items/featured/4.jpg" alt="T-shirts"></a>
+													<div class="product-overlay">
+														<a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter</span></a>
+													</div>
+												</div>
+												<div class="product-desc">
+													<div class="product-title mb-1"><h3><a href="#">Nom Produit</a></h3></div>
+													<div class="product-price font-primary"><ins>Prix DH</ins></div>
+													<div class="product-rating">
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star-empty"></i>
+														<i class="icon-star-empty"></i>
+														<i class="icon-star-empty"></i>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="oc-item">
+											<div class="product iproduct clearfix">
+												<div class="product-image">
+													<a href="#"><img src="demos/shop/images/items/featured/1-1.jpg" alt="T-shirts"></a>
+													<div class="product-overlay">
+														<a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter</span></a>
+													</div>
+												</div>
+												<div class="product-desc">
+													<div class="product-title mb-1"><h3><a href="#">Nom Produit</a></h3></div>
+													<div class="product-price font-primary"><ins>Prix DH</ins></div>
+													<div class="product-rating">
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star-empty"></i>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="oc-item">
+											<div class="product iproduct clearfix">
+												<div class="product-image">
+													<a href="#"><img src="demos/shop/images/items/featured/4-3.jpg" alt="T-shirts"></a>
+													<div class="sale-flash">20%</div>
+
+													<div class="product-overlay">
+														<a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter</span></a>
+													</div>
+												</div>
+												<div class="product-desc">
+													<div class="product-title mb-1"><h3><a href="#">Nom Produit</a></h3></div>
+													<div class="product-price font-primary"><ins>Prix DH</ins></div>
+													<div class="product-rating">
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star-empty"></i>
+														<i class="icon-star-empty"></i>
+													</div>
+												</div>
+											</div>
+										</div>
+
+									</div>
+									<div class="clear bottommargin-sm"></div>
+
+									<div class="fancy-title title-center title-dotted-border topmargin">
+										<h3>Nouveaux Produits</h3>
+									</div>
+									<div id="oc-products" class="owl-carousel products-carousel carousel-widget" data-margin="20" data-loop="true" data-autoplay="5000" data-nav="true" data-pagi="false" data-items-xs="1" data-items-sm="2" data-items-md="3" data-items-lg="4" data-items-xl="5">
+
+										<div class="oc-item">
+											<div class="product iproduct clearfix">
+												<div class="product-image">
+													<a href="#"><img src="images/shop/pants/5.jpg" alt="Checked Short Dress"></a>
+													<a href="#"><img src="images/shop/pants/5-1.jpg" alt="Checked Short Dress"></a>
+													<div class="sale-flash">30%</div>
+													<div class="product-overlay">
+														<a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter</span></a>
+													</div>
+												</div>
+												<div class="product-desc center">
+													<div class="product-title"><h3><a href="#">Nom Produit</a></h3></div>
+													<div class="product-price"><del>300 DH</del> <ins>90 DH</ins></div>
+													<div class="product-rating">
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star-half-full"></i>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="oc-item">
+											<div class="product iproduct clearfix">
+												<div class="product-image">
+													<a href="#"><img src="images/shop/pants/1-1.jpg" alt="Slim Fit Chinos"></a>
+													<a href="#"><img src="images/shop/pants/1.jpg" alt="Slim Fit Chinos"></a>
+													<div class="product-overlay">
+														<a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter</span></a>
+													</div>
+												</div>
+												<div class="product-desc center">
+													<div class="product-title"><h3><a href="#">Nom Produit</a></h3></div>
+													<div class="product-price">Prix DH</div>
+													<div class="product-rating">
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star-half-full"></i>
+														<i class="icon-star-empty"></i>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="oc-item">
+											<div class="product iproduct clearfix">
+												<div class="product-image">
+													<a href="#"><img src="images/shop/shoes/1.jpg" alt="Light Blue Denim Dress"></a>
+													<a href="#"><img src="images/shop/shoes/1-1.jpg" alt="Light Blue Denim Dress"></a>
+													<div class="product-overlay">
+														<a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter</span></a>
+													</div>
+												</div>
+												<div class="product-desc center">
+													<div class="product-title"><h3><a href="#">Nom Produit</a></h3></div>
+													<div class="product-price">Prix DH</div>
+													<div class="product-rating">
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star-empty"></i>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="oc-item">
+											<div class="product iproduct clearfix">
+												<div class="product-image">
+													<a href="#"><img src="images/shop/sunglasses/1.jpg" alt="Unisex Sunglasses"></a>
+													<a href="#"><img src="images/shop/sunglasses/1-1.jpg" alt="Unisex Sunglasses"></a>
+													<div class="product-overlay">
+														<a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter</span></a>
+													</div>
+												</div>
+												<div class="product-desc center">
+													<div class="product-title"><h3><a href="#">Nom Produit</a></h3></div>
+													<div class="product-price"> Prix DH </div>
+													<div class="product-rating">
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star-empty"></i>
+														<i class="icon-star-empty"></i>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="oc-item">
+											<div class="product iproduct clearfix">
+												<div class="product-image">
+													<a href="#"><img src="images/shop/tshirts/1.jpg" alt="Blue Round-Neck Tshirt"></a>
+													<a href="#"><img src="images/shop/tshirts/1-1.jpg" alt="Blue Round-Neck Tshirt"></a>
+													<div class="product-overlay">
+														<a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter</span></a>
+													</div>
+												</div>
+												<div class="product-desc center">
+													<div class="product-title"><h3><a href="#">Nom Produit </a></h3></div>
+													<div class="product-price">Prix DH</div>
+													<div class="product-rating">
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star-half-full"></i>
+														<i class="icon-star-empty"></i>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="oc-item">
+											<div class="product iproduct clearfix">
+												<div class="product-image">
+													<a href="#"><img src="images/shop/watches/1.jpg" alt="Silver Chrome Watch"></a>
+													<a href="#"><img src="images/shop/watches/1-1.jpg" alt="Silver Chrome Watch"></a>
+													<div class="product-overlay">
+														<a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter</span></a>
+													</div>
+												</div>
+												<div class="product-desc center">
+													<div class="product-title"><h3><a href="#">Nom Produit </a></h3></div>
+													<div class="product-price"> Prix DH </div>
+													<div class="product-rating">
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star-half-full"></i>
+													</div>
+												</div>
+											</div>
+										</div>
+
+									</div>
+									<div class="clear bottommargin-sm"></div>
+									<div class="fancy-title title-center title-dotted-border topmargin">
+										<h3>Vous Pouvez Aimer</h3>
+									</div>
+	<div id="oc-products" class="owl-carousel products-carousel carousel-widget" data-margin="20" data-nav="true" data-pagi="false" data-items-xs="1" data-items-sm="2" data-items-md="3" data-items-lg="4">
+
+										<div class="oc-item">
+											<div class="product iproduct clearfix">
+												<div class="product-image">
+													<a href="#"><img src="images/shop/shoes/1.jpg" alt="Checked Short Dress"></a>
+													<a href="#"><img src="images/shop/shoes/1-1.jpg" alt="Checked Short Dress"></a>
+													<div class="sale-flash">50% Off*</div>
+													<div class="product-overlay">
+														<a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
+													</div>
+												</div>
+												<div class="product-desc center">
+													<div class="product-title"><h3><a href="#">Checked Short Dress</a></h3></div>
+													<div class="product-price"><del>$24.99</del> <ins>$12.49</ins></div>
+													<div class="product-rating">
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star-half-full"></i>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="oc-item">
+											<div class="product iproduct clearfix">
+												<div class="product-image">
+													<a href="#"><img src="images/shop/pants/1-1.jpg" alt="Slim Fit Chinos"></a>
+													<a href="#"><img src="images/shop/pants/1.jpg" alt="Slim Fit Chinos"></a>
+													<div class="product-overlay">
+														<a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
+													</div>
+												</div>
+												<div class="product-desc center">
+													<div class="product-title"><h3><a href="#">Slim Fit Chinos</a></h3></div>
+													<div class="product-price">$39.99</div>
+													<div class="product-rating">
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star-half-full"></i>
+														<i class="icon-star-empty"></i>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="oc-item">
+											<div class="product iproduct clearfix">
+												<div class="product-image">
+													<a href="#"><img src="images/shop/pants/5.jpg" alt="Light Blue Denim Dress"></a>
+													<a href="#"><img src="images/shop/pants/5-1.jpg" alt="Light Blue Denim Dress"></a>
+													<div class="product-overlay">
+														<a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
+													</div>
+												</div>
+												<div class="product-desc center">
+													<div class="product-title"><h3><a href="#">Light Blue Denim Dress</a></h3></div>
+													<div class="product-price">$19.95</div>
+													<div class="product-rating">
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star-empty"></i>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="oc-item">
+											<div class="product iproduct clearfix">
+												<div class="product-image">
+													<a href="#"><img src="images/shop/sunglasses/1.jpg" alt="Unisex Sunglasses"></a>
+													<a href="#"><img src="images/shop/sunglasses/1-1.jpg" alt="Unisex Sunglasses"></a>
+													<div class="sale-flash">Sale!</div>
+													<div class="product-overlay">
+														<a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
+													</div>
+												</div>
+												<div class="product-desc center">
+													<div class="product-title"><h3><a href="#">Unisex Sunglasses</a></h3></div>
+													<div class="product-price"><del>$19.99</del> <ins>$11.99</ins></div>
+													<div class="product-rating">
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star-empty"></i>
+														<i class="icon-star-empty"></i>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="oc-item">
+											<div class="product iproduct clearfix">
+												<div class="product-image">
+													<a href="#"><img src="images/shop/tshirts/1.jpg" alt="Blue Round-Neck Tshirt"></a>
+													<a href="#"><img src="images/shop/tshirts/1-1.jpg" alt="Blue Round-Neck Tshirt"></a>
+													<div class="product-overlay">
+														<a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
+													</div>
+												</div>
+												<div class="product-desc center">
+													<div class="product-title"><h3><a href="#">Blue Round-Neck Tshirt</a></h3></div>
+													<div class="product-price">$9.99</div>
+													<div class="product-rating">
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star-half-full"></i>
+														<i class="icon-star-empty"></i>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="oc-item">
+											<div class="product iproduct clearfix">
+												<div class="product-image">
+													<a href="#"><img src="images/shop/watches/1.jpg" alt="Silver Chrome Watch"></a>
+													<a href="#"><img src="images/shop/watches/1-1.jpg" alt="Silver Chrome Watch"></a>
+													<div class="product-overlay">
+														<a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
+													</div>
+												</div>
+												<div class="product-desc center">
+													<div class="product-title"><h3><a href="#">Silver Chrome Watch</a></h3></div>
+													<div class="product-price">$129.99</div>
+													<div class="product-rating">
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star3"></i>
+														<i class="icon-star-half-full"></i>
+													</div>
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+								<div class="clear bottommargin-sm"></div>
+
+
+
+			</div>
+
+		</section><!-- #content end -->
+
+		<!-- Footer
+		============================================= -->
+		<footer id="footer" class="dark">
+
+			<div class="container">
+
+				<!-- Footer Widgets
+				============================================= -->
+				<div class="footer-widgets-wrap clearfix">
+
+					<div class="col_two_third">
+
+						<div class="col_one_third">
+
+							<div class="widget clearfix">
+
+
+								<p>Bienvenue sur  <strong>notre magazin</strong>, votre boutique d'achat en ligne</p>
+
+								<div style="background: url('images/world-map.png') no-repeat center center; background-size: 100%;">
+
+									<abbr title="Phone Number"><strong>Téléphone:</strong></abbr> +2126-xx-xx-xx-xx<br>
+									<abbr title="Email Address"><strong>Email:</strong></abbr> email@gmail.com
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="col_one_third">
+
+							<div class="widget widget_links clearfix">
+
+								<h4>Magazin</h4>
+
+								<ul>
+									<li><a href="{{path('index')}}">Accueil</a></li>
+									<li><a href="#">Hommes</a></li>
+									<li><a href="#">Femmes</a></li>
+									<li><a href="#">Accessoires </a></li>
+									<li><a href="{{path('contact')}}">Contact</a></li>
+									<li><a href="{{path('faq')}}">FAQ</a></li>
+
+									<li><a href="{{path('about')}}">A Propos De Nous </a></li>
+								</ul>
+
+							</div>
+
+						</div>
+
+
+					</div>
+
+					<div class="col_one_third col_last">
+
+
+						<div class="widget subscribe-widget clearfix">
+							<div class="widget-subscribe-form-result"></div>
+							<form id="widget-subscribe-form" action="include/subscribe.php" method="post" class="nobottommargin">
+								<div class="input-group divcenter">
+									<div class="input-group-prepend">
+										<div class="input-group-text"><i class="icon-email2"></i></div>
+									</div>
+									<input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
+									<div class="input-group-append">
+										<button class="btn btn-success" type="submit">S'abonner</button>
+									</div>
+								</div>
+							</form>
+						</div>
+
+						<div class="widget clearfix" style="margin-bottom: -20px;">
+
+							<div class="row">
+
+								<div class="col-lg-6 clearfix bottommargin-sm">
+									<a href="#" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;">
+										<i class="icon-facebook"></i>
+										<i class="icon-facebook"></i>
+									</a>
+									<a href="#"><small style="display: block; margin-top: 3px;"><strong>Aimer notre page </strong><br> Facebook</small></a>
+								</div>
+
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div><!-- .footer-widgets-wrap end -->
+
+			</div>
+
+			<!-- Copyrights
+			============================================= -->
+			<div id="copyrights">
+
+				<div class="container clearfix">
+
+					<div class="col_half">
+						Copyrights &copy; 2019 ISI4-SUPMTI<br>
+					</div>
+
+
+				</div>
+
+			</div><!-- #copyrights end -->
+
+		</footer><!-- #footer end -->
+
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- External JavaScripts
+	============================================= -->
+	<script src="js/jquery.js"></script>
+	<script src="js/plugins.js"></script>
+
+	<script src="js/components/typehead.js"></script>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script src="js/functions.js"></script>
+	<script>
+		var substringMatcher = function(strs) {
+			return function findMatches(q, cb) {
+			var matches, substringRegex;
+
+			// an array that will be populated with substring matches
+			matches = [];
+
+			// regex used to determine if a string contains the substring `q`
+			substrRegex = new RegExp(q, 'i');
+
+			// iterate through the pool of strings and for any string that
+			// contains the substring `q`, add it to the `matches` array
+			$.each(strs, function(i, str) {
+			  if (substrRegex.test(str)) {
+				matches.push(str);
+			  }
+			});
+
+			cb(matches);
+			};
+		};
+
+		var states = ['tshirt', 'montre', 'autre', 'pantalon', 'chaussure',
+			'lunette'
+		];
+
+		$('#sea').typeahead({
+			hint: true,
+			highlight: true,
+			minLength: 1
+		},
+		{
+			name: 'states',
+			source: substringMatcher(states)
+		});
+
+	</script>
+
+
+	<!-- SLIDER REVOLUTION 5.x SCRIPTS  -->
+	<script src="include/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+	<script src="include/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+	<script src="include/rs-plugin/js/extensions/revolution.extension.video.min.js"></script>
+	<script src="include/rs-plugin/js/extensions/revolution.extension.slideanims.min.js"></script>
+	<script src="include/rs-plugin/js/extensions/revolution.extension.actions.min.js"></script>
+	<script src="include/rs-plugin/js/extensions/revolution.extension.layeranimation.min.js"></script>
+	<script src="include/rs-plugin/js/extensions/revolution.extension.kenburn.min.js"></script>
+	<script src="include/rs-plugin/js/extensions/revolution.extension.navigation.min.js"></script>
+	<script src="include/rs-plugin/js/extensions/revolution.extension.migration.min.js"></script>
+	<script src="include/rs-plugin/js/extensions/revolution.extension.parallax.min.js"></script>
+
+	<script>
+
+		var tpj=jQuery;
+		tpj.noConflict();
+
+		tpj(document).ready(function() {
+
+			var apiRevoSlider = tpj('#rev_slider_ishop').show().revolution(
+			{
+				sliderType:"standard",
+				jsFileLocation:"include/rs-plugin/js/",
+				sliderLayout:"fullwidth",
+				dottedOverlay:"none",
+				delay:9000,
+				navigation: {},
+				responsiveLevels:[1200,992,768,480,320],
+				gridwidth:1140,
+				gridheight:500,
+				lazyType:"none",
+				shadow:0,
+				spinner:"off",
+				autoHeight:"off",
+				disableProgressBar:"on",
+				hideThumbsOnMobile:"off",
+				hideSliderAtLimit:0,
+				hideCaptionAtLimit:0,
+				hideAllCaptionAtLilmit:0,
+				debugMode:false,
+				fallbacks: {
+					simplifyAll:"off",
+					disableFocusListener:false,
+				},
+				navigation: {
+					keyboardNavigation:"off",
+					keyboard_direction: "horizontal",
+					mouseScrollNavigation:"off",
+					onHoverStop:"off",
+					touch:{
+						touchenabled:"on",
+						swipe_threshold: 75,
+						swipe_min_touches: 1,
+						swipe_direction: "horizontal",
+						drag_block_vertical: false
+					},
+					arrows: {
+						style: "ares",
+						enable: true,
+						hide_onmobile: false,
+						hide_onleave: false,
+						tmp: '<div class="tp-title-wrap">	<span class="tp-arr-titleholder">kj</span> </div>',
+						left: {
+							h_align: "left",
+							v_align: "center",
+							h_offset: 10,
+							v_offset: 0
+						},
+						right: {
+							h_align: "right",
+							v_align: "center",
+							h_offset: 10,
+							v_offset: 0
+						}
+					}
+				}
+			});
+
+			apiRevoSlider.bind("revolution.slide.onloaded",function (e) {
+				SEMICOLON.slider.sliderParallaxDimensions();
+			});
+
+		}); //ready
+
+	</script>
+	<script src="https://maps.google.com/maps/api/js?key=AIzaSyCzkxzbEni5vR_Ugt1De8gBzrLX3236bnA"></script>
+	<script src="js/jquery.gmap.js"></script>
+	
+	<script>
+
+		jQuery('#google-map').gMap({
+			address: 'Supmti Oujda, Maroc',
+			maptype: 'ROADMAP',
+				zoom: 14,
+			markers: [
+				{
+					address: "Supmti Oujda, Maroc",
+					icon: {
+						image: "images/icons/map-icon-red.png",
+						iconsize: [32, 39],
+						iconanchor: [32,39]
+					}
+				}
+			],
+			doubleclickzoom: false,
+			controls: {
+				panControl: true,
+				zoomControl: true,
+				mapTypeControl: true,
+				scaleControl: false,
+				streetViewControl: false,
+				overviewMapControl: false
+			}
+		});
+
+	</script>
+	
+</body>
+</html>

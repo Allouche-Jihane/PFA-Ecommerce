@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+{% if app.user%}
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+    <title>Nouveau Produit</title>
+    <!-- This Page CSS -->
+    <link rel="stylesheet" type="text/css" href="../assets/libs/dropzone/dist/min/dropzone.min.css">
+    <link href="../assets/libs/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/style.min.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        {% include "include/header.html.twig" %}
+
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        {% include "include/sidebar.html.twig" %}
+
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-5 align-self-center">
+                        <h4 class="page-title">Nouveau Produit</h4>
+                    </div>
+
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <form class="form-horizontal" method="post" enctype="multipart/form-data">
+                                    <div class="card-body">
+                                        <div class="form-group row">
+                                            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Nom Produit </label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" name="nomp" id="fname" placeholder="" value="{{nomp}}">
+                                            </div>
+                                        </div>
+
+                                        <input type="hidden" value="1" name="cat">
+
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 text-right control-label col-form-label">Categories </label>
+                                            <div class="col-sm-6">
+                                                <select class="form-control" name="cat">
+                                                  {% for cat in categories %}
+                                                    <option value="{{cat.idcategorie}}" {%if(cate == cat.idCategorie) %} selected {%endif%}>{{cat.designation}}</option>
+                                                    {% endfor %}
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                                <label class="col-sm-3 text-right control-label col-form-label">Type du Produit </label>
+                                                <div class="col-sm-6">
+                                                    <select class="form-control" name="type">
+                                                      
+                                                        <option value="tshirt" {%if(type == "tshirt") %} selected {%endif%}>tshirt</option>
+                                                        <option value="pantalon" {%if(type == "pantalon") %} selected {%endif%} >pantalon</option>
+                                                        <option value="lunette"  {%if(type == "lunette") %} selected {%endif%}>lunette</option>
+                                                        <option value="chaussure"  {%if(type == "chaussure") %} selected {%endif%}>chaussure</option>
+                                                        <option value="montre"  {%if(type == "montre") %} selected {%endif%}>montre</option>
+                                                        <option value="autre"  {%if(type == "autre") %} selected {%endif%}>autre</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                        <div class="form-group row">
+                                            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Quantité Stock </label>
+                                            <div class="col-sm-6">
+                                                <input type="number" class="form-control" name="quantite"  id="fname" placeholder="" value="{{quantite}}">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="email1" class="col-sm-3 text-right control-label col-form-label">Prix</label>
+                                            <div class="col-sm-6">
+                                                <input type="number" class="form-control" placeholder="" name="prix" aria-label="price" aria-describedby="basic-addon1" value="{{prix}}">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                          <label for="email1" class="col-sm-3 text-right control-label col-form-label">Description</label>
+                                            <div class="col-sm-6 ">
+                                                <div class="form-group">
+                                                    <textarea class="form-control" rows="2" name="desc" > {{desc}}</textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                          <label for="" class="control-label text-right col-md-3">Status</label>
+                                          <div class="col-sm-6 ">
+                                            <div class="custom-control custom-radio custom-control-inline ">
+                                                <input type="radio" id="customRadioInline1" name="customRadioInline1" value="1"
+                                              {%if(btn == "1")%} checked {%endif%}
+                                                class="custom-control-input">
+                                                <label class="custom-control-label" for="customRadioInline1">Publier</label>
+                                            </div>
+                                            <div class="custom-control custom-radio custom-control-inline">
+                                                <input type="radio" id="customRadioInline2" name="customRadioInline1" value="0" class="custom-control-input"
+                                                {%if((btn !=null ) and (btn!="1") )%} checked {%endif%}
+
+                                                >
+                                                <label class="custom-control-label" for="customRadioInline2">Masquer</label>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                        <div class="row form-group">
+                                          <label for="" class="control-label text-right col-md-3">Image Principale</label>
+
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                              <input type="hidden" name="MAX_FILE_SIZE" value="1000000000" />
+                                                <input id="imageF" class="form-control col-md-7 col-xs-12"  name="imageF"  required="required" type="file">
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                          <label for="" class="control-label text-right col-md-3">Image Additionnelles</label>
+
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                              <input type="hidden" name="MAX_FILE_SIZE" value="1000000000" />
+                                                <input id="imageA" class="form-control col-md-7 col-xs-12"  name="imageA[]"  required="required" type="file" multiple>
+                                            </div>
+                                        </div>
+
+
+
+
+
+                                    </div>
+                                    <hr>
+                                    <div class="card-body">
+                                        <h4 class="card-title">Promotion</h4>
+                                        <div class="form-group row">
+                                            <label for="com1" class="col-sm-3 text-right control-label col-form-label"> Valeur du promotion</label>
+                                            <div class="col-sm-6">
+                                                <input type="number" class="form-control" name="promo" 
+                                                {% if promo|length %}
+
+                                                value="{{promo}}"
+                                                {%else%}
+                                                value="0"
+
+                                                {%endif%} 
+
+                                                id="com1" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Date Début</label>
+                                            <div class="col-sm-6">
+                                                <input type="date" class="form-control" name="dated"  value="{{dated}}" id="cono1" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Date Fin</label>
+                                            <div class="col-sm-6">
+                                                <input type="date" class="form-control" name="datef" value="{{datef}}" id="cono1" placeholder="">
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                    <hr>
+                                    <div class="card-body">
+                                        <div class="form-group m-b-0 text-right">
+                                            <button type="submit" class="btn btn-info waves-effect waves-light">Enregistrer</button>
+                                            <button type="reset" onclick="location.href='{{path('listeProduits')}}'" class="btn btn-dark waves-effect waves-light">Annuler</button>
+                                        </div>
+                                    </div>
+                                </form>
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                </div>
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Right sidebar -->
+                <!-- ============================================================== -->
+                <!-- .right-sidebar -->
+                <!-- ============================================================== -->
+                <!-- End Right sidebar -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- customizer Panel -->
+    <!-- ============================================================== -->
+
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="../assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- apps -->
+    <script src="../dist/js/app.min.js"></script>
+    <script src="../dist/js/app.init.js"></script>
+    <script src="../dist/js/app-style-switcher.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../assets/extra-libs/sparkline/sparkline.js"></script>
+    <!--Wave Effects -->
+    <script src="../dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="../dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="../dist/js/custom.min.js"></script>
+    <!-- This Page JS -->
+    <script src="../assets/libs/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+    <script src="../assets/libs/magnific-popup/meg.init.js"></script>
+    <script src="../assets/libs/dropzone/dist/min/dropzone.min.js"></script>
+    <script src="../assets/extra-libs/jqbootstrapvalidation/validation.js"></script>
+    <script>
+    ! function(window, document, $) {
+        "use strict";
+        $("input,select,textarea").not("[type=submit]").jqBootstrapValidation();
+    }(window, document, jQuery);
+    </script>
+
+</body>
+
+{%else%}
+{{render(path('security_login')) }}
+{%endif%}
+</html>

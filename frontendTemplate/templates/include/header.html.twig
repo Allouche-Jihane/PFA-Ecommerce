@@ -1,0 +1,278 @@
+<header id="header" class="full-header">
+
+        <div id="header-wrap">
+
+            <div class="container clearfix">
+
+                <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+                <!-- Logo
+                ============================================= -->
+                <div id="logo">
+                    <a href="{{path('index')}}" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="images/NEW.jpg" alt=" Logo"></a>
+                    <a href="{{path('index')}}" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="" alt=" Logo"></a>
+                </div><!-- #logo end -->
+
+                <!-- Primary Navigation
+                ============================================= -->
+                <nav id="primary-menu">
+
+                    <ul>
+                        <li class="current"><a href="{{path('index')}}"><div>Accueil</div></a>
+
+                        </li>
+                        <!-- Mega Menu
+                        ============================================= -->
+                        {%for c in cat%}
+                            {%if(c.designation =="Homme")%}
+                        <li class="mega-menu"><a href="{{path('produits',{idC:c.idCategorie})}}"><div>Hommes</div></a>
+                            {%endif%}
+                            {%endfor%}
+
+                        </li><!-- .mega-menu end -->
+                        {%for c in cat%}
+                            {%if(c.designation =="Femme")%}
+                            <li class="mega-menu"><a href="{{path('produits',{idC:c.idCategorie})}}"><div>Femme</div></a>
+                                {%endif%}
+                                {%endfor%}
+                        </li><!-- .mega-menu end -->
+                        <li class="mega-menu"><a href="#"><div>Autres</div></a>
+                            <div class="mega-menu-content style-2 clearfix" style="background-image: url('images/shop/shop-menu.jpg'); background-repeat: no-repeat; background-position: right bottom;">
+                                <ul class="mega-menu-column col-xl-2 col-lg-3">
+                                    <li>
+                                        <div class="widget clearfix">
+
+                                            <div class="product iproduct clearfix">
+                                                <div class="product-image">
+                                                    <a href="#"><img src="images/shop/shoes/2-small.jpg" alt="Gray Shoes"></a>
+                                                    <a href="#"><img src="images/shop/shoes/2-2-small.jpg" alt="Gray Shoes"></a>
+                                                    <div class="sale-flash">50% Off*</div>
+                                                    <div class="product-overlay">
+                                                        <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
+                                                        <a href="include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Quick View</span></a>
+                                                    </div>
+                                                </div>
+                                                <div class="product-desc nobottompadding center">
+                                                    <div class="product-title"><h3><a href="#">Gray Shoes</a></h3></div>
+                                                    <div class="product-price"><del>$24.99</del> <ins>$12.49</ins></div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="mega-menu-column col-lg-3">
+                                    <li>
+                                        <div class="widget clearfix">
+
+                                            <h4 class="highlight-me">Last Viewed Items</h4>
+                                            <div class="widget-last-view">
+                                                <div class="spost clearfix">
+                                                    <div class="entry-image">
+                                                        <a href="#"><img src="images/shop/small/3.jpg" alt="Image"></a>
+                                                    </div>
+                                                    <div class="entry-c">
+                                                        <div class="entry-title">
+                                                            <h4><a href="#">Round-Neck Tshirt</a></h4>
+                                                        </div>
+                                                        <ul class="entry-meta">
+                                                            <li class="color">$15</li>
+                                                            <li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                                <div class="spost clearfix">
+                                                    <div class="entry-image">
+                                                        <a href="#"><img src="images/shop/small/10.jpg" alt="Image"></a>
+                                                    </div>
+                                                    <div class="entry-c">
+                                                        <div class="entry-title">
+                                                            <h4><a href="#">Green Trousers</a></h4>
+                                                        </div>
+                                                        <ul class="entry-meta">
+                                                            <li class="color">$19</li>
+                                                            <li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-empty"></i> <i class="icon-star-empty"></i> <i class="icon-star-empty"></i></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                                <div class="spost clearfix">
+                                                    <div class="entry-image">
+                                                        <a href="#"><img src="images/shop/small/7.jpg" alt="Image"></a>
+                                                    </div>
+                                                    <div class="entry-c">
+                                                        <div class="entry-title">
+                                                            <h4><a href="#">Light Blue Denim Dress</a></h4>
+                                                        </div>
+                                                        <ul class="entry-meta">
+                                                            <li class="color">$19.99</li>
+                                                            <li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-half-full"></i> <i class="icon-star-empty"></i></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="mega-menu-column col-lg-2">
+                                    <li class="mega-menu-title"><a href="#"><div>Categories</div></a>
+                                        <ul>
+                                            {%for c in cat%}
+                                            {%if( (c.designation !="Homme")and (c.designation!="Femme"))%}
+                                            
+                                            <li><a href="{{path('produits',{idC:c.idcategorie})}}"><div><i class=""></i>{{c.designation}}</div></a></li>
+                                            {% endif%}
+                                            {%endfor%}
+                                            
+                                        </ul>
+                                    </li>
+                                </ul>
+                                
+                            </div>
+                        </li>
+                        <li class="mega-menu"><a href="{{path('contact')}}"><div>Contact</div></a>
+                            <div class="mega-menu-content style-2 clearfix">
+                                <ul class="mega-menu-column col-lg-3">
+                                    <li>
+                                        <div class="widget d-none d-lg-block clearfix">
+
+                                            <h4>Notre emplacement</h4>
+
+                                            <section  id="google-map" class="gmap" style=" width:300px;height:250px;border:0" allowfullscreen></section>
+
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="mega-menu-column col-lg-6">
+                                    <li>
+                                        <div class="widget clearfix">
+
+                                            <h4>Envoyez-nous un email rapide</h4>
+
+                                            <div class="form-widget" data-loader="button">
+                                                <div class="form-result"></div>
+
+                                                <form class="nobottommargin row" name="template-contactform" action="include/form.php" method="post">
+
+                                                    <div class="col-md-6 mb-0 mb-md-4">
+                                                        <div class="col_full">
+                                                            <input type="text" name="template-contactform-name" value="" class="form-control required" placeholder="Nom" />
+                                                        </div>
+                                                        <div class="col_full">
+                                                            <input type="email" name="template-contactform-email" value="" class="required email form-control" placeholder="Email" />
+                                                        </div>
+                                                        <div class="col_full nobottommargin">
+                                                            <input type="text" name="template-contactform-phone" value="" class="form-control" placeholder="Téléphone" />
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6 mb-4">
+                                                        <div class="col_full">
+                                                            <input type="text" name="subject" value="" class="required form-control" placeholder="Objet" />
+                                                        </div>
+                                                        <textarea class="required form-control" name="template-contactform-message" rows="3" cols="30" placeholder="Entrer Ton Message"></textarea>
+                                                    </div>
+
+                                                    <div class="clear"></div>
+
+                                                    <div class="col-12 hidden">
+                                                        <input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="form-control" />
+                                                    </div>
+
+                                                    <div class="col-12">
+                                                        <button class="button button-3d button-small nomargin" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Envoyer</button>
+                                                    </div>
+
+                                                    <input type="hidden" name="prefix" value="template-contactform-">
+
+                                                </form>
+                                            </div>
+
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="mega-menu-column col-lg-3">
+                                    <li>
+                                        <div class="widget clearfix">
+
+
+                                            <address>
+                                                <strong>Address:</strong><br>
+                                               Boulevard X<br>
+                                                Oujda<br>
+                                                Maroc<br>
+                                            </address>
+                                            <abbr title="Phone Number"><strong>Téléphone:</strong></abbr> +2126-xx-xx-xx-xx<br>
+                                            <abbr title="Email Address"><strong>Email:</strong></abbr> email@gmail.com
+
+                                            <div class="bottommargin-sm"></div>
+
+
+
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="{{path('faq')}}"><div>FAQ</div></a></li>
+                        <li><a href="{{path('about')}}"><div>A propos de nous</div></a></li>
+
+                    </ul>
+
+
+                    <!-- Top Cart
+                    ============================================= -->
+                    <div id="top-cart">
+                        <a href="#" id="top-cart-trigger"><i class="icon-shopping-cart"></i><span>5</span></a>
+                        <div class="top-cart-content">
+                            <div class="top-cart-title">
+                                <h4>Panier</h4>
+                            </div>
+                            <div class="top-cart-items">
+                                <div class="top-cart-item clearfix">
+                                    <div class="top-cart-item-image">
+                                        <a href="#"><img src="images/shop/small/1.jpg" alt="Blue Round-Neck Tshirt" /></a>
+                                    </div>
+                                    <div class="top-cart-item-desc">
+                                        <a href="#">Tshirt Bleu</a>
+                                        <span class="top-cart-item-price">190.99 DH</span>
+                                        <span class="top-cart-item-quantity">x 2</span>
+                                    </div>
+                                </div>
+                                <div class="top-cart-item clearfix">
+                                    <div class="top-cart-item-image">
+                                        <a href="#"><img src="images/shop/small/6.jpg" alt="Light Blue Denim Dress" /></a>
+                                    </div>
+                                    <div class="top-cart-item-desc">
+                                        <a href="#">Robe</a>
+                                        <span class="top-cart-item-price">240.99 DH</span>
+                                        <span class="top-cart-item-quantity">x 3</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="top-cart-action clearfix">
+                                <span class="fleft top-checkout-price">1104.95 DH</span>
+                                <button class="button button-3d button-small nomargin fright" onclick="location.href='{{path('panier')}}'">Voir Panier</button>
+                            </div>
+                        </div>
+                    </div><!-- #top-cart end -->
+
+                    <!-- Top Search
+                    ============================================= -->
+                    <div id="top-search">
+                        <a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
+                        <form action="{{path('search')}}" method="post" >
+                            <input type="text" name="q"  id="sea" class="typeahead form-control" value="" placeholder="Chercher par nom ou type ...">
+                        </form>
+                    </div><!-- #top-search end -->
+
+                    <a href="{{path('login')}}" class="header-login-trigger"><i class="icon-line2-login"></i></a>
+
+                </nav><!-- #primary-menu end -->
+
+            </div>
+
+        </div>
+    </header><!-- #header end -->

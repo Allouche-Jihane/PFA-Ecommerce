@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+{% if app.user%}
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+    <title>Ventes</title>
+    <!-- This page plugin CSS -->
+    <link href="../assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../dist/css/style.min.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        {% include "include/header.html.twig" %}
+
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        {% include "include/sidebar.html.twig" %}
+
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- Column -->
+
+                    <div class="col-lg-12">
+                      <div class="row m-t-40">
+<!-- Column -->
+<div class="col-md-6 col-lg-3 col-xlg-3">
+<div class="card card-hover">
+    <div class="box bg-info text-center">
+        <h1 class="font-light text-white">{{count}}</h1>
+        <h6 class="text-white">Total Commandes</h6>
+    </div>
+</div>
+</div>
+<!-- Column -->
+<div class="col-md-6 col-lg-3 col-xlg-3">
+<div class="card card-hover">
+    <div class="box bg-success text-center" >
+        <h1 class="font-light text-white">{{countT}}</h1>
+        <h6 class="text-white">Total Teriminée</h6>
+    </div>
+</div>
+</div>
+<!-- Column -->
+<div class="col-md-6 col-lg-3 col-xlg-3">
+<div class="card card-hover">
+    <div class="box bg-danger text-center">
+        <h1 class="font-light text-white">{{countA}}</h1>
+        <h6 class="text-white">Total Annulée</h6>
+    </div>
+</div>
+</div>
+<!-- Column -->
+<div class="col-md-6 col-lg-3 col-xlg-3">
+<div class="card card-hover">
+    <div class="box bg-warning text-center">
+        <h1 class="font-light text-white">{{countAt}}</h1>
+        <h6 class="text-white">Total Attente</h6>
+    </div>
+</div>
+</div>
+<!-- Column -->
+</div>
+                        <div class="card">
+                            <div class="card-body">
+
+                                <div class="table-responsive">
+                                    <table class="table product-overview" id="zero_config">
+                                        <thead>
+                                            <tr>
+                                                <th>id de la commande</th>
+                                                <th>Nom du client</th>
+                                                <th>Email</th>
+                                                <th>Status</th>
+                                                <th>Montant Total</th>
+                                                <th>Date de commande</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for a in vente %}
+                                            <tr>
+                                                <td>{{a.idcommande}}</td>
+                                                <td>{{a.clientclient.nomClient}}</td>
+                                                <td>{{a.clientclient.emailClient}}</td>
+                                                <td>
+                                                  {%if(a.etatCommande == "Terminée")%}
+                                              <span class="label label-success font-weight-100">Terminée</span>
+                                                  {%elseif(a.etatCommande == "Annulée")%}
+                                              <span class="label label-danger font-weight-100">Annulée</span>
+                                              {%elseif(a.etatCommande == "Attente")%}
+                                                <span class="label label-warning font-weight-100">Attente</span>
+                                                {%endif%}
+
+                                                </td>
+                                                <td>{{a.prixVente}}</td>
+                                                <td>{{a.dateCommande  | date('Y-m-d')}}</td>
+                                            </tr>
+                                           {% endfor %}
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                </div>
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Right sidebar -->
+                <!-- ============================================================== -->
+                <!-- .right-sidebar -->
+                <!-- ============================================================== -->
+                <!-- End Right sidebar -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="../assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- apps -->
+    <script src="../dist/js/app.min.js"></script>
+    <script src="../dist/js/app.init.js"></script>
+    <script src="../dist/js/app-style-switcher.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../assets/extra-libs/sparkline/sparkline.js"></script>
+    <!--Wave Effects -->
+    <script src="../dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="../dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="../dist/js/custom.min.js"></script>
+    <!--This page plugins -->
+    <script src="../assets/extra-libs/DataTables/datatables.min.js"></script>
+
+    <script type="text/javascript">
+
+$('#zero_config').DataTable({
+    "language": {
+        "emptyTable":     "No hay datos disponibles",
+        "info":           "Affiche _START_ à _END_ de  de _TOTAL_ entrées",
+        "infoEmpty":      "Affichage 0 à 0 de 0 entrées",
+        "infoFiltered":   "(filtré de _MAX_ entrées totales)",
+        "infoPostFix":    "",
+        "thousands":      ".",
+        "lengthMenu":     "Afficher _MENU_ entrées",
+        "loadingRecords": "Cargando...",
+        "processing":     "Procesando...",
+        "search":         "Rechercher:",
+        "zeroRecords":    "Aucun enregistrements correspondants trouvés",
+        "paginate": {
+            "first":      "Primera",
+            "last":       "ÚLtima",
+            "next":       "Suivant",
+            "previous":   "Précédent"
+        },
+        "aria": {
+            "sortAscending":  ": activate to sort column ascending",
+            "sortDescending": ": activate to sort column descending"
+        }
+    }
+});
+</script></body>
+{%else%}
+{{render(path('security_login')) }}
+{%endif%}
+</html>

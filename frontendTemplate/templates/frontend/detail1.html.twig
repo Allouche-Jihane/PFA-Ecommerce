@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Raleway:300,400,500,600,700|Crete+Round:400i" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+
+
+		<!-- Star Rating CSS -->
+		<link rel="stylesheet" href="css/components/bs-rating.css" type="text/css" />
+	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<!-- Document Title
+	============================================= -->
+	<title>Detail Produit</title>
+  <style>
+	.header-login-trigger {
+		float: right;
+		width: 20px;
+		height: 20px;
+		line-height: 20px;
+		font-size: 20px;
+		text-align: center;
+		margin: 40px 0 40px 10px;
+		color: #222;
+		-webkit-transition: margin .4s ease;
+		-o-transition: margin .4s ease;
+		transition: margin .4s ease;
+	}
+
+	.header-login-trigger:hover { color: #666; }
+
+	#header.sticky-header .header-login-trigger { margin: 20px 0 20px 10px; }
+
+</style>
+
+</head>
+
+<body class="stretched">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+		<!-- Header
+		============================================= -->
+		<header id="header" class="full-header">
+
+			<div id="header-wrap">
+
+				<div class="container clearfix">
+
+					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+					<!-- Logo
+					============================================= -->
+					<div id="logo">
+						<a href="{{path('index')}}" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="images/NEW.jpg" alt=" Logo"></a>
+						<a href="{{path('index')}}" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="" alt=" Logo"></a>
+					</div><!-- #logo end -->
+
+
+					<!-- Primary Navigation
+					============================================= -->
+					<nav id="primary-menu">
+
+						<ul>
+							<li class="current"><a href="{{path('index')}}"><div>Accueil</div></a>
+
+							</li>
+							<!-- Mega Menu
+							============================================= -->
+							<li class="mega-menu"><a href=""><div>Hommes</div></a>
+
+							</li><!-- .mega-menu end -->
+							<li><a href="#"><div>Femmes</div></a>
+							</li><!-- .mega-menu end -->
+							<li><a href="#"><div>Accessoires</div></a></li>
+							<li class="mega-menu"><a href="{{path('contact')}}"><div>Contact</div></a>
+								<div class="mega-menu-content style-2 clearfix">
+									<ul class="mega-menu-column col-lg-3">
+										<li>
+											<div class="widget d-none d-lg-block clearfix">
+
+												<h4>Notre emplacement</h4>
+
+												<section  id="google-map" class="gmap" style=" width:300px;height:250px;border:0" allowfullscreen></section>
+
+											</div>
+										</li>
+									</ul>
+									<ul class="mega-menu-column col-lg-6">
+										<li>
+											<div class="widget clearfix">
+
+												<h4>Envoyez-nous un email rapide</h4>
+
+												<div class="form-widget" data-loader="button">
+													<div class="form-result"></div>
+
+													<form class="nobottommargin row" name="template-contactform" action="include/form.php" method="post">
+
+														<div class="col-md-6 mb-0 mb-md-4">
+															<div class="col_full">
+																<input type="text" name="template-contactform-name" value="" class="form-control required" placeholder="Nom" />
+															</div>
+															<div class="col_full">
+																<input type="email" name="template-contactform-email" value="" class="required email form-control" placeholder="Email" />
+															</div>
+															<div class="col_full nobottommargin">
+																<input type="text" name="template-contactform-phone" value="" class="form-control" placeholder="Téléphone" />
+															</div>
+														</div>
+
+														<div class="col-md-6 mb-4">
+															<div class="col_full">
+																<input type="text" name="subject" value="" class="required form-control" placeholder="Objet" />
+															</div>
+															<textarea class="required form-control" name="template-contactform-message" rows="3" cols="30" placeholder="Entrer Ton Message"></textarea>
+														</div>
+
+														<div class="clear"></div>
+
+														<div class="col-12 hidden">
+															<input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="form-control" />
+														</div>
+
+														<div class="col-12">
+															<button class="button button-3d button-small nomargin" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Envoyer</button>
+														</div>
+
+														<input type="hidden" name="prefix" value="template-contactform-">
+
+													</form>
+												</div>
+
+											</div>
+										</li>
+									</ul>
+									<ul class="mega-menu-column col-lg-3">
+										<li>
+											<div class="widget clearfix">
+
+
+												<address>
+													<strong>Address:</strong><br>
+											   	Boulevard X<br>
+													Oujda<br>
+													Maroc<br>
+												</address>
+												<abbr title="Phone Number"><strong>Téléphone:</strong></abbr> +2126-xx-xx-xx-xx<br>
+												<abbr title="Email Address"><strong>Email:</strong></abbr> email@gmail.com
+
+												<div class="bottommargin-sm"></div>
+
+
+
+											</div>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="{{path('faq')}}"><div>FAQ</div></a></li>
+							<li><a href="{{path('about')}}"><div>A propos de nous</div></a></li>
+
+						</ul>
+
+
+						<!-- Top Cart
+						============================================= -->
+						<div id="top-cart">
+							<a href="#" id="top-cart-trigger"><i class="icon-shopping-cart"></i><span>5</span></a>
+							<div class="top-cart-content">
+								<div class="top-cart-title">
+									<h4>Panier</h4>
+								</div>
+								<div class="top-cart-items">
+									<div class="top-cart-item clearfix">
+										<div class="top-cart-item-image">
+											<a href="#"><img src="images/shop/small/1.jpg" alt="Blue Round-Neck Tshirt" /></a>
+										</div>
+										<div class="top-cart-item-desc">
+											<a href="#">Tshirt Bleu</a>
+											<span class="top-cart-item-price">190.99 DH</span>
+											<span class="top-cart-item-quantity">x 2</span>
+										</div>
+									</div>
+									<div class="top-cart-item clearfix">
+										<div class="top-cart-item-image">
+											<a href="#"><img src="images/shop/small/6.jpg" alt="Light Blue Denim Dress" /></a>
+										</div>
+										<div class="top-cart-item-desc">
+											<a href="#">Robe</a>
+											<span class="top-cart-item-price">240.99 DH</span>
+											<span class="top-cart-item-quantity">x 3</span>
+										</div>
+									</div>
+								</div>
+								<div class="top-cart-action clearfix">
+									<span class="fleft top-checkout-price">1104.95 DH</span>
+									<button class="button button-3d button-small nomargin fright" onclick="location.href='{{path('panier')}}'">Voir Panier</button>
+								</div>
+							</div>
+						</div><!-- #top-cart end -->
+
+						<!-- Top Search
+						============================================= -->
+						<div id="top-search">
+							<a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
+							<form action="{{path('search')}}" method="get">
+								<input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
+							</form>
+						</div><!-- #top-search end -->
+
+						<a href="{{path('login')}}" class="header-login-trigger"><i class="icon-line2-login"></i></a>
+
+					</nav><!-- #primary-menu end -->
+
+				</div>
+
+			</div>
+		</header><!-- #header end -->
+		<!-- Page Title
+		============================================= -->
+		<section id="page-title">
+
+			<div class="container clearfix">
+				<h1>Bottes marron </h1>
+
+			</div>
+
+		</section><!-- #page-title end -->
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+
+			<div class="content-wrap">
+
+				<div class="container clearfix">
+
+					<div class="single-product ">
+
+						<div class="product">
+
+							<div class="col_two_fifth">
+
+								<!-- Product Single - Gallery
+								============================================= -->
+								<div class="product-image">
+									<div class="fslider" data-pagi="false" data-arrows="false" data-thumbs="true">
+										<div class="flexslider">
+											<div class="slider-wrap" data-lightbox="gallery">
+												<div class="slide" data-thumb="images/shop/shoes/1.jpg"><a href="images/shop/shoes/1.jpg" title="Shoes brown - Front View" data-lightbox="gallery-item"><img src="images/shop/shoes/1.jpg" alt="Shoes brown"></a></div>
+												<div class="slide" data-thumb="images/shop/shoes/1-1.jpg"><a href="images/shop/shoes/1-1.jpg" title="Shoes brown - Side View" data-lightbox="gallery-item"><img src="images/shop/shoes/1-1.jpg" alt="Shoes brown"></a></div>
+												<div class="slide" data-thumb="images/shop/shoes/1-2.jpg"><a href="images/shop/shoes/1-2.jpg" title="Shoes brown - Back View" data-lightbox="gallery-item"><img src="images/shop/shoes/1-2.jpg" alt="Shoes brown"></a></div>
+											</div>
+										</div>
+									</div>
+									<div class="sale-flash">Sale!</div>
+								</div><!-- Product Single - Gallery End -->
+
+							</div>
+
+							<div class="col_two_fifth  product-desc ">
+
+								<!-- Product Single - Price
+								============================================= -->
+								<div class="  product-price"><del>$39.99</del> <ins>$24.99</ins></div><!-- Product Single - Price End -->
+
+								<!-- Product Single - Rating
+								============================================= -->
+								<div class="product-rating">
+									<i class="icon-star3"></i>
+									<i class="icon-star3"></i>
+									<i class="icon-star3"></i>
+									<i class="icon-star-half-full"></i>
+									<i class="icon-star-empty"></i>
+								</div><!-- Product Single - Rating End -->
+
+								<div class="clear"></div>
+								<div class="line"></div>
+
+								<!-- Product Single - Quantity & Cart Button
+								============================================= -->
+								<form class=" cart nobottommargin clearfix" method="post" enctype='multipart/form-data' >
+									<div class="quantity clearfix">
+										<input type="button" value="-" class="minus">
+										<input type="text" step="1" min="1"  id="sPriceRewards" name="quantity" value="1" title="Qty" class="qty" size="4" />
+										<input type="button" value="+" id="submit" class="plus">
+									</div>
+									<button type="submit" class="add-to-cart button button-mini nomargin">Ajouter au panier</button>
+									<button type="button" class="add-to-cart button button-small "  onclick="location.href='{{path('panier')}}'" >J'achète</button>
+									<br> <br>
+									<div style="text-align : right">
+
+											<a href="#"> <i class="icon-heart-empty"></i> Ajouter à votre liste</a>
+									</div>
+								</form><!-- Product Single - Quantity & Cart Button End -->
+
+								<div class="clear"></div>
+								<div class="line"></div>
+
+								<!-- Product Single - Short Description
+								============================================= -->
+								<p>Chaussures convient à toutes les occasions </p>
+								<p>Sûr et confortable, vous propose le look le plus charmant.
+									Parfait pour une utilisation performance ou personnelle
+								</p>
+								<!-- Product Single - Short Description End -->
+
+
+								<!-- Product Single - Share
+								============================================= -->
+
+
+							</div>
+
+
+
+							<div class="col_full nobottommargin">
+
+								<div class="tabs clearfix nobottommargin" id="tab-1">
+
+									<ul class="tab-nav clearfix">
+										<li><a href="#tabs-3"><i class="icon-star3"></i><span class="d-none d-md-inline-block"> Avis (2)</span></a></li>
+									</ul>
+
+									<div class="tab-container">
+
+										<div class="tab-content clearfix" id="tabs-3">
+
+											<div id="reviews" class="clearfix">
+
+												<ol class="commentlist clearfix">
+
+													<li class="comment even thread-even depth-1" id="li-comment-1">
+														<div id="comment-1" class="comment-wrap clearfix">
+
+															<div class="comment-meta">
+																<div class="comment-author vcard">
+																	<span class="comment-avatar clearfix">
+																	<img alt='' src='http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60' height='60' width='60' /></span>
+																</div>
+															</div>
+
+															<div class="comment-content clearfix">
+																<div class="comment-author">TAARABT Zakariae<span><a href="#" title="Permalink to this comment"> 20 Mars, 2019 à 10:00</a></span></div>
+																<p>Très Bonne qualité !</p>
+																<div class="review-comment-ratings">
+																	<i class="icon-star3"></i>
+																	<i class="icon-star3"></i>
+																	<i class="icon-star3"></i>
+																	<i class="icon-star3"></i>
+																	<i class="icon-star-half-full"></i>
+																</div>
+															</div>
+
+															<div class="clear"></div>
+
+														</div>
+													</li>
+
+													<li class="comment even thread-even depth-1" id="li-comment-1">
+														<div id="comment-1" class="comment-wrap clearfix">
+
+															<div class="comment-meta">
+																<div class="comment-author vcard">
+																	<span class="comment-avatar clearfix">
+																	<img alt='' src='http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60' height='60' width='60' /></span>
+																</div>
+															</div>
+
+															<div class="comment-content clearfix">
+																<div class="comment-author">ALLOUCHE Jihane<span><a href="#" title="Permalink to this comment">10 Février, 2019 at 20:00 </a></span></div>
+																<p> Pas mal ! </p>
+																<div class="review-comment-ratings">
+																	<i class="icon-star3"></i>
+																	<i class="icon-star3"></i>
+																	<i class="icon-star3"></i>
+																	<i class="icon-star-empty"></i>
+																	<i class="icon-star-empty"></i>
+																</div>
+															</div>
+
+															<div class="clear"></div>
+
+														</div>
+													</li>
+
+												</ol>
+
+												<!-- Modal Reviews
+												============================================= -->
+												<a href="#" data-toggle="modal" data-target="#reviewFormModal" class="button button-3d nomargin fright">Ajouter Un Avis</a>
+
+												<div class="modal fade" id="reviewFormModal" tabindex="-1" role="dialog" aria-labelledby="reviewFormModalLabel" aria-hidden="true">
+													<div class="modal-dialog">
+														<div class="modal-content">
+															<div class="modal-header">
+																<h4 class="modal-title" id="reviewFormModalLabel">Ajouter un Avis </h4>
+																<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+															</div>
+															<div class="modal-body">
+																<form class="nobottommargin" id="template-reviewform" name="template-reviewform" action="#" method="post">
+
+																	<div class="col_half">
+																		<label for="template-reviewform-name">Nom <small>*</small></label>
+																		<div class="input-group">
+																			<div class="input-group-prepend">
+																				<div class="input-group-text"><i class="icon-user"></i></div>
+																			</div>
+																			<input type="text" id="template-reviewform-name" name="template-reviewform-name" value="" class="form-control required" />
+																		</div>
+																	</div>
+
+																	<div class="col_half col_last">
+																		<label for="template-reviewform-email">Email <small>*</small></label>
+																		<div class="input-group">
+																			<div class="input-group-prepend"><div class="input-group-text">@</div></div>
+																			<input type="email" id="template-reviewform-email" name="template-reviewform-email" value="" class="required email form-control" />
+																		</div>
+																	</div>
+
+																	<div class="clear"></div>
+
+																	<div class="col_full col_last">
+																		<label for="template-reviewform-rating">Evaluation</label>
+																		<input id="input-17b " class="rating" data-size="sm" value="2">
+																	</div>
+
+																	<div class="clear"></div>
+
+																	<div class="col_full">
+																		<label for="template-reviewform-comment">Commentaire <small>*</small></label>
+																		<textarea class="required form-control" id="template-reviewform-comment" name="template-reviewform-comment" rows="6" cols="30"></textarea>
+																	</div>
+
+																	<div class="col_full nobottommargin">
+																		<button class="button button-3d nomargin" type="submit" id="template-reviewform-submit" name="template-reviewform-submit" value="submit">Partager l'avis</button>
+																	</div>
+
+																</form>
+															</div>
+															<div class="modal-footer">
+																<button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+															</div>
+														</div><!-- /.modal-content -->
+													</div><!-- /.modal-dialog -->
+												</div><!-- /.modal -->
+												<!-- Modal Reviews End -->
+
+											</div>
+
+										</div>
+
+									</div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="clear"></div><div class="line"></div>
+
+					<div class="col_full nobottommargin">
+
+						<h4>Produits Similaires</h4>
+
+						<div id="oc-product" class="owl-carousel product-carousel carousel-widget" data-margin="30" data-pagi="false" data-autoplay="5000" data-items-xs="1" data-items-md="2" data-items-lg="3" data-items-xl="4">
+
+							<div class="oc-item">
+								<div class="product iproduct clearfix">
+									<div class="product-image">
+										<a href="#"><img src="images/shop/shoes/2.jpg" alt=""></a>
+										<a href="#"><img src="images/shop/shoes/2-1.jpg" alt=""></a>
+										<div class="sale-flash">50%</div>
+										<div class="product-overlay">
+											<a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter</span></a>
+											<a href="#" ><i class="icon-zoom-in2"></i><span> Voir </span></a>
+										</div>
+									</div>
+									<div class="product-desc center">
+										<div class="product-title"><h3><a href="#">Nom Produit</a></h3></div>
+										<div class="product-price"><del>Prix ancien</del> <ins>Prix</ins></div>
+										<div class="product-rating">
+											<i class="icon-star3"></i>
+											<i class="icon-star3"></i>
+											<i class="icon-star3"></i>
+											<i class="icon-star3"></i>
+											<i class="icon-star-half-full"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="oc-item">
+								<div class="product iproduct clearfix">
+									<div class="product-image">
+										<a href="#"><img src="images/shop/pants/1-1.jpg" alt="Slim Fit Chinos"></a>
+										<a href="#"><img src="images/shop/pants/1.jpg" alt="Slim Fit Chinos"></a>
+										<div class="product-overlay">
+											<a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter</span></a>
+											<a href="#"><i class="icon-zoom-in2"></i><span> Voir</span></a>
+										</div>
+									</div>
+									<div class="product-desc center">
+										<div class="product-title"><h3><a href="#">Nom Produit</a></h3></div>
+										<div class="product-price"> <ins>Prix</ins></div>
+											<div class="product-rating">
+											<i class="icon-star3"></i>
+											<i class="icon-star3"></i>
+											<i class="icon-star3"></i>
+											<i class="icon-star-half-full"></i>
+											<i class="icon-star-empty"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="oc-item">
+								<div class="product iproduct clearfix">
+									<div class="product-image">
+										<a href="#"><img src="images/shop/shoes/1-1.jpg" alt="Dark Brown Boots"></a>
+										<a href="#"><img src="images/shop/shoes/1.jpg" alt="Dark Brown Boots"></a>
+										<div class="product-overlay">
+											<a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter</span></a>
+											<a href="#"><i class="icon-zoom-in2"></i><span> Voir</span></a>
+										</div>
+									</div>
+									<div class="product-desc center">
+										<div class="product-title"><h3><a href="#">Nom Produit</a></h3></div>
+											<div class="product-price"> <ins>Prix</ins></div>
+										<div class="product-rating">
+											<i class="icon-star3"></i>
+											<i class="icon-star3"></i>
+											<i class="icon-star3"></i>
+											<i class="icon-star-empty"></i>
+											<i class="icon-star-empty"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="oc-item">
+								<div class="product iproduct clearfix">
+									<div class="product-image">
+										<a href="#"><img src="images/shop/pants/5.jpg" alt=""></a>
+										<a href="#"><img src="images/shop/pants/5-1.jpg" alt=""></a>
+										<div class="product-overlay">
+											<a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter</span></a>
+											<a href="#" ><i class="icon-zoom-in2"></i><span> Voir</span></a>
+										</div>
+									</div>
+									<div class="product-desc center">
+										<div class="product-title"><h3><a href="#">Nom Produit</a></h3></div>
+											<div class="product-price"> <ins>Prix</ins></div>
+											<div class="product-rating">
+											<i class="icon-star3"></i>
+											<i class="icon-star3"></i>
+											<i class="icon-star3"></i>
+											<i class="icon-star3"></i>
+											<i class="icon-star-empty"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="oc-item">
+								<div class="product iproduct clearfix">
+									<div class="product-image">
+										<a href="#"><img src="images/shop/sunglasses/1.jpg" alt="Unisex Sunglasses"></a>
+										<a href="#"><img src="images/shop/sunglasses/1-1.jpg" alt="Unisex Sunglasses"></a>
+										<div class="product-overlay">
+											<a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter</span></a>
+											<a href="#"><i class="icon-zoom-in2"></i><span> Voir</span></a>
+										</div>
+									</div>
+									<div class="product-desc center">
+										<div class="product-title"><h3><a href="#">Nom Produit</a></h3></div>
+										<div class="product-price"> <ins>Prix</ins></div>
+										<div class="product-rating">
+											<i class="icon-star3"></i>
+											<i class="icon-star3"></i>
+											<i class="icon-star3"></i>
+											<i class="icon-star-empty"></i>
+											<i class="icon-star-empty"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</section><!-- #content end -->
+
+		<!-- Footer
+		============================================= -->
+		<footer id="footer" class="dark">
+
+			<div class="container">
+
+				<!-- Footer Widgets
+				============================================= -->
+				<div class="footer-widgets-wrap clearfix">
+
+					<div class="col_two_third">
+
+						<div class="col_one_third">
+
+							<div class="widget clearfix">
+
+
+								<p>Bienvenue sur  <strong>notre magazin</strong>, votre boutique d'achat en ligne</p>
+
+								<div style="background: url('images/world-map.png') no-repeat center center; background-size: 100%;">
+
+									<abbr title="Phone Number"><strong>Téléphone:</strong></abbr> +2126-xx-xx-xx-xx<br>
+									<abbr title="Email Address"><strong>Email:</strong></abbr> email@gmail.com
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="col_one_third">
+
+							<div class="widget widget_links clearfix">
+
+								<h4>Magazin</h4>
+
+								<ul>
+									<li><a href="{{path('index')}}">Accueil</a></li>
+									<li><a href="">Hommes</a></li>
+									<li><a href="#">Femmes</a></li>
+									<li><a href="#">Accessoires </a></li>
+									<li><a href="{{path('contact')}}">Contact</a></li>
+									<li><a href="{{path('faq')}}">FAQ</a></li>
+
+									<li><a href="{{path('about')}}">A Propos De Nous </a></li>
+								</ul>
+
+							</div>
+
+						</div>
+
+
+					</div>
+
+					<div class="col_one_third col_last">
+
+
+						<div class="widget subscribe-widget clearfix">
+							<div class="widget-subscribe-form-result"></div>
+							<form id="widget-subscribe-form" action="include/subscribe.php" method="post" class="nobottommargin">
+								<div class="input-group divcenter">
+									<div class="input-group-prepend">
+										<div class="input-group-text"><i class="icon-email2"></i></div>
+									</div>
+									<input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
+									<div class="input-group-append">
+										<button class="btn btn-success" type="submit">S'abonner</button>
+									</div>
+								</div>
+							</form>
+						</div>
+
+						<div class="widget clearfix" style="margin-bottom: -20px;">
+
+							<div class="row">
+
+								<div class="col-lg-6 clearfix bottommargin-sm">
+									<a href="#" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;">
+										<i class="icon-facebook"></i>
+										<i class="icon-facebook"></i>
+									</a>
+									<a href="#"><small style="display: block; margin-top: 3px;"><strong>Aimer notre page </strong><br> Facebook</small></a>
+								</div>
+
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div><!-- .footer-widgets-wrap end -->
+
+			</div>
+
+			<!-- Copyrights
+			============================================= -->
+			<div id="copyrights">
+
+				<div class="container clearfix">
+
+					<div class="col_half">
+						Copyrights &copy; 2019 ISI4-SUPMTI<br>
+					</div>
+
+
+				</div>
+
+			</div><!-- #copyrights end -->
+
+		</footer><!-- #footer end -->
+
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- External JavaScripts
+	============================================= -->
+	<script src="js/jquery.js"></script>
+	<script src="js/plugins.js"></script>
+	<!-- Star Rating Plugin -->
+	<script src="js/components/star-rating.js"></script>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script src="js/functions.js"></script>
+	<script src="https://maps.google.com/maps/api/js?key=AIzaSyCzkxzbEni5vR_Ugt1De8gBzrLX3236bnA"></script>
+	<script src="js/jquery.gmap.js"></script>
+	<script>
+
+		jQuery('#google-map').gMap({
+			address: 'Supmti Oujda, Maroc',
+			maptype: 'ROADMAP',
+				zoom: 14,
+			markers: [
+				{
+					address: "Supmti Oujda, Maroc",
+					icon: {
+						image: "images/icons/map-icon-red.png",
+						iconsize: [32, 39],
+						iconanchor: [32,39]
+					}
+				}
+			],
+			doubleclickzoom: false,
+			controls: {
+				panControl: true,
+				zoomControl: true,
+				mapTypeControl: true,
+				scaleControl: false,
+				streetViewControl: false,
+				overviewMapControl: false
+			}
+		});
+
+	</script>
+	 
+	 <script>
+$(':text').keyup(function() {	
+    if($('#sPriceRewards').val() > "10") { 
+	   $('#submit').attr('disabled', true);
+    } else {
+       $('#submit').removeAttr('disabled'); 
+    }
+});
+
+	</script>
+</body>
+</html>

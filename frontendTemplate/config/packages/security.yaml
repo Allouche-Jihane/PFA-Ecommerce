@@ -1,0 +1,35 @@
+security:
+    encoders:
+        App\Entity\Client:
+            algorithm: plaintext
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    providers:
+        in_memory: { memory: ~ }
+        in_database: 
+            entity:
+                class: App\Entity\Client
+                property: emailClient
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            anonymous: true
+            
+
+            provider: in_database
+
+            form_login:
+                login_path: login
+                check_path: login
+
+            
+            logout:
+                path: security_logout
+                target: index
+           
+
+    access_control:
+        # - { path: ^/admin, roles: ROLE_ADMIN }
+        # - { path: ^/profile, roles: ROLE_USER }
+
